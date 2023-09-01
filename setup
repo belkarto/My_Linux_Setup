@@ -70,12 +70,12 @@ install_tilix() {
 #------------------------------------------------------------------------------
 
 install_tools() {
-	apt install build-essential
-	apt install curl
-	apt install g++
-	apt install zsh
-	apt install dub
-	apt install gnome-tweaks
+	sudo apt install build-essential
+	sudo apt install curl
+	sudo apt install g++
+	sudo apt install zsh
+	sudo apt install dub
+	sudo apt install gnome-tweaks
 }
 
 #------------------------------------------------------------------------------
@@ -94,17 +94,17 @@ set_theme() {
 		rmdir $HOME/.themes/Dracula_dir
 		gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
 		gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
-		cp -r icons/* $HOME/.icons/
-		echo "open tweaks"
-		echo "appearance->icons->afterglow-recolored...."
-		echo "appearance->cursor->vortex-dark-icons"
-		cp -r ./themes/Sweet-Dark $HOME/.themes
-		echo "appearance->shell->sweet-Dark"
-		echo "note you should install User themes to modifier shell"
-		echo "https://extensions.gnome.org/extension/19/user-themes/"
-		echo "you can install it and enable it from here"
-		echo "install Dash to panel extensions"
-		echo "https://extensions.gnome.org/extension/1160/dash-to-panel/"
+		# cp -r icons/* $HOME/.icons/
+		# echo "open tweaks"
+		# echo "appearance->icons->afterglow-recolored...."
+		# echo "appearance->cursor->vortex-dark-icons"
+		# cp -r ./themes/Sweet-Dark $HOME/.themes
+		# echo "appearance->shell->sweet-Dark"
+		# echo "note you should install User themes to modifier shell"
+		# echo "https://extensions.gnome.org/extension/19/user-themes/"
+		# echo "you can install it and enable it from here"
+		# echo "install Dash to panel extensions"
+		# echo "https://extensions.gnome.org/extension/1160/dash-to-panel/"
 	fi
 }
 
@@ -112,14 +112,9 @@ set_theme() {
 
 #------------------------------------------------------------------------------
 
-if [ "$EUID" -ne 0 ]; then
-	echo "Script is not running with sudo."
-	# install_nvim
-	# shell_conf
-	# install_tilix
-	# set_theme
-else
-	echo "Script is running with sudo."
-	install_tools
-fi
+install_tools
+install_nvim
+shell_conf
+install_tilix
+set_theme
 
