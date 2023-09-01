@@ -110,13 +110,16 @@ set_theme() {
 
 #------------------------------------------------------------------------------
 
+#------------------------------------------------------------------------------
+
 if [ "$EUID" -ne 0 ]; then
-    echo "Script is not running with sudo."
-	install_nvim
-	shell_conf
-	install_tilix
-	set_theme
+	echo "Script is not running with sudo."
+	# install_nvim
+	# shell_conf
+	# install_tilix
+	# set_theme
 else
-    echo "Script is running with sudo."
+	echo "Script is running with sudo."
 	install_tools
 fi
+
