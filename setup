@@ -137,3 +137,4 @@ shell_conf
 install_tilix
 set_theme
 
+git clone https://aur.archlinux.org/yay.git
