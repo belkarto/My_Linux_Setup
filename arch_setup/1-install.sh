@@ -1,29 +1,4 @@
 #/bin/bash
-#  ___           _        _ _  
-# |_ _|_ __  ___| |_ __ _| | | 
-#  | || '_ \/ __| __/ _` | | | 
-#  | || | | \__ \ || (_| | | | 
-# |___|_| |_|___/\__\__,_|_|_| 
-#                              
-# by Stephan Raabe (2023) 
-# ----------------------------------------------------- 
-# Install Script for required packages
-# ------------------------------------------------------
-
-# ------------------------------------------------------
-# Load Library
-# ------------------------------------------------------
-source $(dirname "$0")/scripts/library.sh
-clear
-echo "  ___           _        _ _  "
-echo " |_ _|_ __  ___| |_ __ _| | | "
-echo "  | ||  _ \/ __| __/ _  | | | "
-echo "  | || | | \__ \ || (_| | | | "
-echo " |___|_| |_|___/\__\__,_|_|_| "
-echo "                              "
-echo "by Stephan Raabe (2023)"
-echo "-------------------------------------"
-echo ""
 
 # ------------------------------------------------------
 # Check if yay is installed
@@ -32,9 +7,10 @@ if sudo pacman -Qs yay > /dev/null ; then
     echo "yay is installed. You can proceed with the installation"
 else
     echo "yay is not installed. Will be installed now!"
-    git clone https://aur.archlinux.org/yay-git.git ~/yay-git
+    git clone https://aur.archlinux.org/yay-git.git ~/bin/yay-git
     cd ~/yay-git
     makepkg -si
+	rm -rf ~/bin/yay-git
     cd ~/dotfiles/
     clear
     echo "yay has been installed successfully."
@@ -45,7 +21,6 @@ else
     echo "  | || | | \__ \ || (_| | | | "
     echo " |___|_| |_|___/\__\__,_|_|_| "
     echo "                              "
-    echo "by Stephan Raabe (2023)"
     echo "-------------------------------------"
     echo ""
 fi
@@ -110,6 +85,7 @@ packagesPacman=(
     "blueman"
 	"freerdp" 
 	"chromium" 
+	"firefox"
 );
 
 packagesYay=(

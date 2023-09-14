@@ -130,11 +130,12 @@ set_theme() {
 
 #------------------------------------------------------------------------------
 
-install_tools
-install_nvim
-install_tmux
-shell_conf
-install_tilix
-set_theme
+#install_tools
+#install_nvim
+#install_tmux
+#shell_conf
+#install_tilix
+#set_theme
 
+sudo pacman -S base-devel
 git clone https://aur.archlinux.org/yay.git
