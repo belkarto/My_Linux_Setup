@@ -86,6 +86,7 @@ packagesPacman=(
 	"freerdp" 
 	"chromium" 
 	"firefox"
+	"ly"
 );
 
 packagesYay=(
@@ -119,55 +120,6 @@ echo ""
 echo "-> Install .bashrc"
 
 _installSymLink .bashrc ~/.bashrc ~/dotfiles/.bashrc ~/.bashrc
-
-# ------------------------------------------------------
-# Install custom issue (login prompt)
-# ------------------------------------------------------
-echo ""
-echo "-> Install login screen"
-while true; do
-    read -p "Do you want to install the custom login promt? (Yy/Nn): " yn
-    case $yn in
-        [Yy]* )
-            sudo cp ~/dotfiles/issue /etc/issue
-            echo "Login promt installed."
-        break;;
-        [Nn]* ) 
-            echo "Custom login promt skipped."
-        break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
-
-# ------------------------------------------------------
-# Install wallpapers
-# ------------------------------------------------------
-echo ""
-echo "-> Install wallapers"
-while true; do
-    read -p "Do you want to clone the wallpapers? (Yy/Nn): " yn
-    case $yn in
-        [Yy]* )
-            if [ -d ~/wallpaper/ ]; then
-                echo "wallpaper folder already exists."
-            else
-                git clone https://gitlab.com/stephan-raabe/wallpaper.git ~/wallpaper
-                echo "wallpaper installed."
-            fi
-            echo "Wallpaper installed."
-        break;;
-        [Nn]* ) 
-            if [ -d ~/wallpaper/ ]; then
-                echo "wallpaper folder already exists."
-            else
-                mkdir ~/wallpaper
-            fi
-            cp ~/dotfiles/default.jpg ~/wallpaper
-            echo "Default wallpaper installed."
-        break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
 
 # ------------------------------------------------------
 # Init pywal

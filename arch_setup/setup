@@ -56,46 +56,6 @@ install_nvim() {
 	# tput init;
 }
 
-install_tmux() {
-	cd "$HOME/bin"
-	FILE="tmux-3.3a.tar.gz"
-	tmux -V > /dev/null 2>&1
-	if [ $? -ne 0 ]; then
-		echo "downloading tmux..."
-		curl -# -OL 'https://github.com/tmux/tmux/releases/download/3.3a/tmux-3.3a.tar.gz'
-		tar xzf $FILE
-		rm $FILE
-		cd tmux-3.3a
-		./configure
-		make
-		cd $HOME/bin
-		ln -s $HOME/bin/tmux-3.3a/tmux tmux
-	fi
-}
-#------------------------------------------------------------------------------
-
-install_tilix() {
-	cd /tmp
-	git clone https://github.com/gnunn1/tilix.git tili
-	cd tili
-	chmod 744 install.sh
-	dub build --build=release
-	sudo ./install.sh
-}
-
-#------------------------------------------------------------------------------
-
-install_tools() {
-	sudo apt install build-essential
-	sudo apt install curl
-	sudo apt install g++
-	sudo apt install zsh
-	sudo apt install dub
-	sudo apt install gnome-tweaks
-	sudo apt install libevent-dev
-	sudo apt install libncurses-dev
-}
-
 #------------------------------------------------------------------------------
 
 set_theme() {
@@ -112,30 +72,15 @@ set_theme() {
 		rmdir $HOME/.themes/Dracula_dir
 		gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
 		gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
-		# cp -r icons/* $HOME/.icons/
-		# echo "open tweaks"
-		# echo "appearance->icons->afterglow-recolored...."
-		# echo "appearance->cursor->vortex-dark-icons"
-		# cp -r ./themes/Sweet-Dark $HOME/.themes
-		# echo "appearance->shell->sweet-Dark"
-		# echo "note you should install User themes to modifier shell"
-		# echo "https://extensions.gnome.org/extension/19/user-themes/"
-		# echo "you can install it and enable it from here"
-		# echo "install Dash to panel extensions"
-		# echo "https://extensions.gnome.org/extension/1160/dash-to-panel/"
 	fi
 }
 
 #------------------------------------------------------------------------------
 
-#------------------------------------------------------------------------------
 
 #install_tools
-#install_nvim
-#install_tmux
 #shell_conf
-#install_tilix
-#set_theme
 
-sudo pacman -S base-devel
-git clone https://aur.archlinux.org/yay.git
+# sudo pacman -S base-devel
+# git clone https://aur.archlinux.org/yay.git
+set_theme
