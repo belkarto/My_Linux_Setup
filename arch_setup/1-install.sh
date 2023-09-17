@@ -1,37 +1,46 @@
 #/bin/bash
 
 # ------------------------------------------------------
+# colors
+# ------------------------------------------------------
+RED="\033[31m"
+GREEN="\033[32m"
+END="\033[0m"
+
+# ------------------------------------------------------
 # Check if yay is installed
 # ------------------------------------------------------
+echo -e ${GREEN}"#################################################################"
+echo "#	██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗	#"   
+echo "#	██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║	#" 
+echo "#	██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║	#"
+echo "#	██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║	#"
+echo "#	██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗	#"
+echo "#	╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝	#"
+echo "#################################################################"
+echo -e ${END}
+sleep 1
+clear
 if sudo pacman -Qs yay > /dev/null ; then
     echo "yay is installed. You can proceed with the installation"
 else
     echo "yay is not installed. Will be installed now!"
     git clone https://aur.archlinux.org/yay-git.git ~/bin/yay-git
-    cd ~/yay-git
+    cd ~/bin/yay-git/
     makepkg -si
 	rm -rf ~/bin/yay-git
     cd ~/dotfiles/
     clear
-    echo "yay has been installed successfully."
-    echo ""
-    echo "  ___           _        _ _  "
-    echo " |_ _|_ __  ___| |_ __ _| | | "
-    echo "  | ||  _ \/ __| __/ _  | | | "
-    echo "  | || | | \__ \ || (_| | | | "
-    echo " |___|_| |_|___/\__\__,_|_|_| "
-    echo "                              "
-    echo "-------------------------------------"
+    echo -s "${GREEN}yay has been installed successfully.${END}"
     echo ""
 fi
-
 # ------------------------------------------------------
 # Confirm Start
 # ------------------------------------------------------
 
 while true; do
-    read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " yn
-    case $yn in
+    read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " answer
+    case $answer in
         [Yy]* )
             echo "Installation started."
         break;;
@@ -50,43 +59,58 @@ echo ""
 echo "-> Install main packages"
 
 packagesPacman=(
-    "picom" 
-    "alacritty" 
+    #standalone compositor
+	"picom" 
+	#terminal
+    "alacritty"
+	#application launcher
     "rofi" 
     "rofi-calc" 
-    "scrot" 
-    "nitrogen" 
+	#command line screen capture utility
+	"scrot"
+	#desktop background browser
+    "nitrogen"
+	#notification
     "dunst" 
+	#shell promt
     "starship"
+	#display locker
     "slock" 
-    "neovim" 
-    "mpv" 
-    "xfce4-power-manager" 
+	#file manager
     "thunar" 
-    "mousepad" 
-    "ttf-font-awesome" 
-    "ttf-fira-sans" 
-    "ttf-fira-code" 
-    "ttf-firacode-nerd" 
+	# terminal ascii art
     "figlet" 
+	#theme switcher LXDE + feature rich GTK
     "lxappearance" 
+	#pulseaudio manager
+	"pavucontrol" 
+	#display manager | login screen manager
+	"ly"
     "breeze" 
     "breeze-gtk" 
     "vlc" 
-    "exa" 
+	"neovim" 
+	"mpv" 
+    "hyprland" 
+    "xdg-desktop-portal-hyprland" 
+    "waybar" 
+    "grim" 
+    "slurp"
+	"xfce4-power-manager" 
     "python-pip" 
     "python-psutil" 
     "python-rich" 
     "python-click" 
     "xdg-desktop-portal-gtk"
-    "pavucontrol" 
     "tumbler" 
     "xautolock" 
     "blueman"
-	"freerdp" 
 	"chromium" 
 	"firefox"
-	"ly"
+	"ttf-font-awesome" 
+	"ttf-fira-sans" 
+	"ttf-fira-code" 
+	"ttf-firacode-nerd" 
 );
 
 packagesYay=(
@@ -94,6 +118,10 @@ packagesYay=(
     "pfetch" 
     "bibata-cursor-theme" 
     "trizen"
+    "swww" 
+    "swaylock-effects" 
+    "wlogout"
+	"ttf-meslo-nerd-font-powerlevel10k"
 );
   
 # ------------------------------------------------------
@@ -116,21 +144,21 @@ clear
 # ------------------------------------------------------
 # Install .bashrc
 # ------------------------------------------------------
-echo ""
-echo "-> Install .bashrc"
+# echo ""
+# echo "-> Install .bashrc"
 
-_installSymLink .bashrc ~/.bashrc ~/dotfiles/.bashrc ~/.bashrc
+# _installSymLink .bashrc ~/.bashrc ~/dotfiles/.bashrc ~/.bashrc
 
 # ------------------------------------------------------
 # Init pywal
 # ------------------------------------------------------
-echo ""
-echo "-> Init pywal"
-wal -i ~/dotfiles/default.jpg
-echo "pywal initiated."
+# echo ""
+# echo "-> Init pywal"
+# wal -i ~/dotfiles/default.jpg
+# echo "pywal initiated."
 
 # ------------------------------------------------------
 # DONE
 # ------------------------------------------------------
 clear
-echo "DONE!"
+echo "${GREEN}DONE!${END}"
