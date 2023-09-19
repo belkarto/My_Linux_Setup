@@ -22,33 +22,33 @@ echo -e ${END}
 sleep 1
 clear
 if sudo pacman -Qs yay > /dev/null ; then
-    echo "yay is installed. You can proceed with the installation"
+	echo "yay is installed. You can proceed with the installation"
 else
-    echo "yay is not installed. Will be installed now!"
-    git clone https://aur.archlinux.org/yay-git.git ~/bin/yay-git
-    cd ~/bin/yay-git/
-    makepkg -si
+	echo "yay is not installed. Will be installed now!"
+	git clone https://aur.archlinux.org/yay-git.git ~/bin/yay-git
+	cd ~/bin/yay-git/
+	makepkg -si
 	rm -rf ~/bin/yay-git
-    cd ~/dotfiles/
-    clear
-    echo -s "${GREEN}yay has been installed successfully.${END}"
-    echo ""
+	cd ~/dotfiles/
+	clear
+	echo -s "${GREEN}yay has been installed successfully.${END}"
+	echo ""
 fi
 # ------------------------------------------------------
 # Confirm Start
 # ------------------------------------------------------
 
 while true; do
-    read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " answer
-    case $answer in
-        [Yy]* )
-            echo "Installation started."
-        break;;
-        [Nn]* ) 
-            exit;
-        break;;
-        * ) echo "Please answer yes or no.";;
-    esac
+	read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " answer
+	case $answer in
+		[Yy]* )
+			echo "Installation started."
+			break;;
+		[Nn]* ) 
+			exit;
+			break;;
+		* ) echo "Please answer yes or no.";;
+	esac
 done
 
 # ------------------------------------------------------
@@ -59,74 +59,75 @@ echo ""
 echo "-> Install main packages"
 
 packagesPacman=(
-    #standalone compositor
+	#standalone compositor
 	"picom" 
 	#terminal
-    "alacritty"
+	"alacritty"
 	#application launcher
-    "rofi" 
-    "rofi-calc" 
+	"rofi" 
+	"rofi-calc" 
 	#command line screen capture utility
 	"scrot"
 	#desktop background browser
-    "nitrogen"
+	"nitrogen"
 	#notification
-    "dunst" 
+	"dunst" 
 	#shell promt
-    "starship"
+	"starship"
 	#display locker
-    "slock" 
+	"slock" 
 	#file manager
-    "thunar" 
+	"thunar" 
 	# terminal ascii art
-    "figlet" 
+	"figlet" 
 	#theme switcher LXDE + feature rich GTK
-    "lxappearance" 
+	"lxappearance" 
 	#pulseaudio manager
 	"pavucontrol" 
 	#display manager | login screen manager
 	"ly"
-    "breeze" 
-    "breeze-gtk" 
-    "vlc" 
+	"breeze" 
+	"breeze-gtk" 
+	"vlc" 
 	"neovim" 
 	"mpv" 
-    "hyprland" 
-    "xdg-desktop-portal-hyprland" 
-    "waybar" 
-    "grim" 
-    "slurp"
+	"hyprland" 
+	"xdg-desktop-portal-hyprland" 
+	"waybar" 
+	"grim" 
+	"slurp"
 	"xfce4-power-manager" 
-    "python-pip" 
-    "python-psutil" 
-    "python-rich" 
-    "python-click" 
-    "xdg-desktop-portal-gtk"
-    "tumbler" 
-    "xautolock" 
-    "blueman"
+	"python-pip" 
+	"python-psutil" 
+	"python-rich" 
+	"python-click" 
+	"xdg-desktop-portal-gtk"
+	"tumbler" 
+	"xautolock" 
+	"blueman"
 	"chromium" 
 	"firefox"
 	"ttf-font-awesome" 
 	"ttf-fira-sans" 
 	"ttf-fira-code" 
 	"ttf-firacode-nerd" 
-);
+	);
 
-packagesYay=(
-    "brave-bin" 
-    "pfetch" 
-    "bibata-cursor-theme" 
-    "trizen"
-    "swww" 
-    "swaylock-effects" 
-    "wlogout"
-	"ttf-meslo-nerd-font-powerlevel10k"
-);
-  
+	packagesYay=(
+		"brave-bin" 
+		"pfetch" 
+		"bibata-cursor-theme" 
+		"trizen"
+		"swww" 
+		"swaylock-effects" 
+		"wlogout"
+		"ttf-meslo-nerd-font-powerlevel10k"
+		);
+
 # ------------------------------------------------------
 # Install required packages
 # ------------------------------------------------------
+source /home/belkarto/My_Linux_Setup/arch_setup/to_check/scripts/library.sh
 _installPackagesPacman "${packagesPacman[@]}";
 _installPackagesYay "${packagesYay[@]}";
 
@@ -134,9 +135,9 @@ _installPackagesYay "${packagesYay[@]}";
 # Install pywal
 # ------------------------------------------------------
 if [ -f /usr/bin/wal ]; then
-    echo "pywal already installed."
+	echo "pywal already installed."
 else
-    yay --noconfirm -S pywal
+	yay --noconfirm -S pywal
 fi
 
 clear
@@ -152,13 +153,13 @@ clear
 # ------------------------------------------------------
 # Init pywal
 # ------------------------------------------------------
-# echo ""
-# echo "-> Init pywal"
-# wal -i ~/dotfiles/default.jpg
-# echo "pywal initiated."
+ echo ""
+ echo "-> Init pywal"
+ wal -i ~/dotfiles/default.jpg
+ echo "pywal initiated."
 
 # ------------------------------------------------------
 # DONE
 # ------------------------------------------------------
-clear
-echo "${GREEN}DONE!${END}"
+#clear
+echo "${GREEN} DONE! ${END}"

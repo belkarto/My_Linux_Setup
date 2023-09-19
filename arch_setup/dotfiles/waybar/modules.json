@@ -48,7 +48,7 @@
     // Updates Count
     "custom/updates": {
         "format": " {}",
-        "exec": "~/dotfiles/scripts/updates.sh",
+        "exec": "~/.config/scripts/updates.sh",
         "restart-interval": 600,
         "on-click": "alacritty -e yay",
         "tooltip": false
@@ -65,14 +65,14 @@
     // Rofi Calculator
     "custom/calculator": {
         "format": "",
-        "on-click": "~/dotfiles/scripts/calculator.sh",
+        "on-click": "~/.config/scripts/calculator.sh",
         "tooltip": false
     },
 
     // Rofi Application Launcher
     "custom/appmenu": {
         "format": "App",
-        "on-click": "~/dotfiles/scripts/applauncher.sh",
+        "on-click": "~/.config/scripts/applauncher.sh",
         "tooltip": false
     },
 

@@ -1,13 +1,4 @@
 #!/bin/bash
-# __        __    _ _                              
-# \ \      / /_ _| | |_ __   __ _ _ __   ___ _ __  
-#  \ \ /\ / / _` | | | '_ \ / _` | '_ \ / _ \ '__| 
-#   \ V  V / (_| | | | |_) | (_| | |_) |  __/ |    
-#    \_/\_/ \__,_|_|_| .__/ \__,_| .__/ \___|_|    
-#                    |_|         |_|               
-#  
-# by Stephan Raabe (2023) 
-# ----------------------------------------------------- 
 
 # ----------------------------------------------------- 
 # Select wallpaper
@@ -30,7 +21,7 @@ if [ "$selected" ]; then
     # ----------------------------------------------------- 
     # Copy color file to waybar folder
     # ----------------------------------------------------- 
-    cp ~/.cache/wal/colors-waybar.css ~/dotfiles/waybar/
+    cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/
     cp $wallpaper ~/.cache/current_wallpaper.jpg   
 
     newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
@@ -39,7 +30,7 @@ if [ "$selected" ]; then
     # Set the new wallpaper
     # ----------------------------------------------------- 
     swww img $wallpaper --transition-step 20 --transition-fps=20
-    ~/dotfiles/waybar/launch.sh
+    ~/.config/waybar/launch.sh
 
     # ----------------------------------------------------- 
     # Send notification
