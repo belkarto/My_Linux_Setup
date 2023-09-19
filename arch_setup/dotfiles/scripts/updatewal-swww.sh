@@ -22,7 +22,7 @@ source "$HOME/.cache/wal/colors.sh"
 # ----------------------------------------------------- 
 # Copy color file to waybar folder
 # ----------------------------------------------------- 
-cp ~/.cache/wal/colors-waybar.css ~/dotfiles/waybar/
+cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/
 cp $wallpaper ~/.cache/current_wallpaper.jpg
 
 # ----------------------------------------------------- 
@@ -34,7 +34,7 @@ newwall=$(echo $wallpaper | sed "s|$HOME/wallpaper/||g")
 # Set the new wallpaper
 # ----------------------------------------------------- 
 swww img $wallpaper --transition-step 30 --transition-fps=30
-~/dotfiles/waybar/launch.sh
+~/.config/waybar/launch.sh
 
 # ----------------------------------------------------- 
 # Send notification
