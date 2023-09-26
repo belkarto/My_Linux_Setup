@@ -1,5 +1,5 @@
 #!/bin/bash
-source $(dirname "$0")/scripts/library.sh
+source $HOME/My_Linux_Setup/arch_setup/dotfiles/scripts/library.sh
 clear
 
 # ------------------------------------------------------

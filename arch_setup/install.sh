@@ -131,7 +131,7 @@ packagesPacman=(
 # ------------------------------------------------------
 # Install required packages
 # ------------------------------------------------------
-source /home/belkarto/My_Linux_Setup/arch_setup/dotfiles/scripts/library.sh
+source $HOME/My_Linux_Setup/arch_setup/dotfiles/scripts/library.sh
 _installPackagesPacman "${packagesPacman[@]}";
 _installPackagesYay "${packagesYay[@]}";
 
