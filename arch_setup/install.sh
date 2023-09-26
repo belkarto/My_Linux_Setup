@@ -25,6 +25,7 @@ if sudo pacman -Qs yay > /dev/null ; then
 	echo "yay is installed. You can proceed with the installation"
 else
 	echo "yay is not installed. Will be installed now!"
+    sudo pacman -S base-devel
 	git clone https://aur.archlinux.org/yay-git.git ~/bin/yay-git
 	cd ~/bin/yay-git/
 	makepkg -si
@@ -86,6 +87,8 @@ packagesPacman=(
 	"pavucontrol" 
 	#display manager | login screen manager
 	"ly"
+    "exa"
+    "mousepad"
 	"breeze" 
 	"breeze-gtk" 
 	"vlc" 
@@ -110,7 +113,8 @@ packagesPacman=(
 	"ttf-font-awesome" 
 	"ttf-fira-sans" 
 	"ttf-fira-code" 
-	"ttf-firacode-nerd" 
+	"ttf-firacode-nerd"
+    "freerdp"
 	);
 
 	packagesYay=(
@@ -127,9 +131,26 @@ packagesPacman=(
 # ------------------------------------------------------
 # Install required packages
 # ------------------------------------------------------
-source /home/belkarto/My_Linux_Setup/arch_setup/to_check/scripts/library.sh
+source /home/belkarto/My_Linux_Setup/arch_setup/dotfiles/scripts/library.sh
 _installPackagesPacman "${packagesPacman[@]}";
 _installPackagesYay "${packagesYay[@]}";
+
+# ------------------------------------------------------
+# Install display manager
+# ------------------------------------------------------
+while true; do
+	read -p "DO YOU WANT ENABLE LY? (Yy/Nn): " answer
+	case $answer in
+		[Yy]* )
+			echo "Installation started."
+            sudo systemctl enable ly.service
+			break;;
+		[Nn]* ) 
+			exit;
+			break;;
+		* ) echo "Please answer yes or no.";;
+	esac
+done
 
 # ------------------------------------------------------
 # Install pywal
@@ -139,7 +160,6 @@ if [ -f /usr/bin/wal ]; then
 else
 	yay --noconfirm -S pywal
 fi
-
 clear
 
 # ------------------------------------------------------
@@ -153,13 +173,13 @@ clear
 # ------------------------------------------------------
 # Init pywal
 # ------------------------------------------------------
- echo ""
- echo "-> Init pywal"
- wal -i ~/dotfiles/default.jpg
- echo "pywal initiated."
+ # echo ""
+ # echo "-> Init pywal"
+ # wal -i ~/dotfiles/default.jpg
+ # echo "pywal initiated."
 
 # ------------------------------------------------------
 # DONE
 # ------------------------------------------------------
 #clear
-echo "${GREEN} DONE! ${END}"
+echo -e "${GREEN} DONE! ${END}"

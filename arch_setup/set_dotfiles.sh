@@ -42,34 +42,33 @@ echo "-> Install general dotfiles"
 echo "-------------------------------------"
 echo ""
 
-_installSymLink alacritty ~/.config/alacritty ~/dotfiles/alacritty/ ~/.config
-_installSymLink ranger ~/.config/ranger ~/dotfiles/ranger/ ~/.config
-_installSymLink vim ~/.config/vim ~/dotfiles/vim/ ~/.config
-_installSymLink starship ~/.config/starship.toml ~/dotfiles/starship/starship.toml ~/.config/starship.toml
-_installSymLink rofi ~/.config/rofi ~/dotfiles/rofi/ ~/.config
-_installSymLink dunst ~/.config/dunst ~/dotfiles/dunst/ ~/.config
-_installSymLink wal ~/.config/wal ~/dotfiles/wal/ ~/.config
+_installSymLink alacritty ~/.config/alacritty ~/My_Linux_Setup/arch_setup/dotfiles/alacritty/ ~/.config
+_installSymLink ranger ~/.config/ranger ~/My_Linux_Setup/arch_setup/dotfiles/ranger/ ~/.config
+_installSymLink rofi ~/.config/rofi ~/My_Linux_Setup/arch_setup/dotfiles/rofi/ ~/.config
+_installSymLink dunst ~/.config/dunst ~/My_Linux_Setup/arch_setup/dotfiles/dunst/ ~/.config
+_installSymLink wal ~/.config/wal ~/My_Linux_Setup/arch_setup/dotfiles/wal/ ~/.config
 
 echo "-------------------------------------"
 echo "-> Install GTK dotfiles"
 echo "-------------------------------------"
 echo ""
 
-_installSymLink .gtkrc-2.0 ~/.gtkrc-2.0 ~/dotfiles/gtk/.gtkrc-2.0 ~/.gtkrc-2.0
-_installSymLink gtk-3.0 ~/.config/gtk-3.0 ~/dotfiles/gtk/gtk-3.0/ ~/.config/
-_installSymLink .Xresouces ~/.Xresources ~/dotfiles/gtk/.Xresources ~/.Xresources
-_installSymLink .icons ~/.icons ~/dotfiles/gtk/.icons/ ~/
+_installSymLink .gtkrc-2.0 ~/.gtkrc-2.0 ~/My_Linux_Setup/arch_setup/dotfiles/gtk/.gtkrc-2.0 ~/.gtkrc-2.0
+_installSymLink gtk-3.0 ~/.config/gtk-3.0 ~/My_Linux_Setup/arch_setup/dotfiles/gtk/gtk-3.0/ ~/.config/
+_installSymLink .Xresouces ~/.Xresources ~/My_Linux_Setup/arch_setup/dotfiles/gtk/.Xresources ~/.Xresources
+_installSymLink .icons ~/.icons ~/My_Linux_Setup/arch_setup/dotfiles/gtk/.icons/ ~/
 
 echo "-------------------------------------"
 echo "-> Install Hyprland dotfiles"
 echo "-------------------------------------"
 echo ""
 
-_installSymLink hypr ~/.config/hypr ~/dotfiles/hypr/ ~/.config
-_installSymLink waybar ~/.config/waybar ~/dotfiles/waybar/ ~/.config
-_installSymLink swaylock ~/.config/swaylock ~/dotfiles/swaylock/ ~/.config
-_installSymLink wlogout ~/.config/wlogout ~/dotfiles/wlogout/ ~/.config
+_installSymLink hypr ~/.config/hypr ~/My_Linux_Setup/arch_setup/dotfiles/hypr/ ~/.config
+_installSymLink waybar ~/.config/waybar ~/My_Linux_Setup/arch_setup/dotfiles/waybar/ ~/.config
+_installSymLink swaylock ~/.config/swaylock ~/My_Linux_Setup/arch_setup/dotfiles/swaylock/ ~/.config
+_installSymLink wlogout ~/.config/wlogout ~/My_Linux_Setup/arch_setup/dotfiles/wlogout/ ~/.config
 
+_installSymLink scripts ~/.config/scripts ~/My_Linux_Setup/arch_setup/dotfiles/scripts/ ~/.config/scripts
 # ------------------------------------------------------
 # DONE
 # ------------------------------------------------------
