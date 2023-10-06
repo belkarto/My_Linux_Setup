@@ -1,56 +1,57 @@
 {
     // General Settings
     "layer": "top",
-    "height": 16,
-    "margin-top": 14,
-    "margin-bottom": 0,
-    "margin-left": 0,
-    "margin-right": 0,    
-    "spacing": 0,
+        "height": 16,
+        "margin-top": 14,
+        "margin-bottom": 0,
+        "margin-left": 0,
+        "margin-right": 0,    
+        "spacing": 0,
 
-    // Load Modules
-    "include": ["~/.config/waybar/modules.json"],
+        // Load Modules
+        "include": ["~/.config/waybar/modules.json"],
 
-    // Modules Left
-    "modules-left": [
-        "custom/appmenu",
+        // Modules Left
+        "modules-left": [
+            "custom/appmenu",
         "wlr/taskbar",
-        "group/quicklinks"
-    ],
+        "group/quicklinks",
+        "hyprland/window"
+        ],
 
-    // Modules Center
-    "modules-center": [
-        "hyprland/workspaces"
-    ],
+        // Modules Center
+        "modules-center": [
+            "hyprland/workspaces"
+        ],
 
-    // Modules Right    
-    "modules-right": [
-        "custom/updates",
-		"pulseaudio",
+        // Modules Right    
+        "modules-right": [
+            "custom/updates",
+        "pulseaudio",
         "bluetooth",
         "battery", 
         "group/hardware",
         "network",
         "clock",
-		"custom/exit",
-    ],
+        "custom/exit",
+        ],
 
-    // Group Quicklinks
-    "group/quicklinks": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/firefox",
-	    "custom/calculator",
-         ]
-    },
+        // Group Quicklinks
+        "group/quicklinks": {
+            "orientation": "horizontal",
+            //"modules": [
+            //    "custom/firefox",
+            //"custom/calculator",
+            //]
+        },
 
-    // Group Hardware
-    "group/hardware": {
-        "orientation": "horizontal",
-        "modules": [
-            "disk",
+        // Group Hardware
+        "group/hardware": {
+            "orientation": "horizontal",
+            "modules": [
+                "disk",
             "cpu",
             "memory"
-        ]
-    }
+            ]
+        }
 }

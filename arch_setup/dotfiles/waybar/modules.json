@@ -1,20 +1,19 @@
 {
     // Workspaces
-    "hyprland/workspaces" : {
+    "hyprland/workspaces": {
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-			"urgent": "",
-			"active": "",
-			"default": ""
+            "urgent": "",
+            "active": "",
+            "default": ""
         },
         "persistent_workspaces": {
-             "*": 5
-        }       
+            "*": 5
+        }
     },
-
     // Taskbar
     "wlr/taskbar": {
         "format": "{icon}",
@@ -23,7 +22,7 @@
         "on-click": "activate",
         "on-click-middle": "close",
         "ignore-list": [
-           "Alacritty"
+            "Alacritty"
         ],
         "app_ids-mapping": {
             "firefoxdeveloperedition": "firefox-developer-edition"
@@ -33,8 +32,6 @@
             "Foot Server": "Terminal"
         }
     },
-
-
     // Updates Count
     "custom/updates": {
         "format": " {}",
@@ -43,36 +40,30 @@
         "on-click": "alacritty -e yay",
         "tooltip": false
     },
-
     // Brave Launcher
     "custom/firefox": {
         "format": "",
         "on-click": "firefox",
         "tooltip": false
     },
-
-
     // Rofi Calculator
     "custom/calculator": {
         "format": "",
         "on-click": "~/.config/scripts/calculator.sh",
         "tooltip": false
     },
-
     // Rofi Application Launcher
     "custom/appmenu": {
         "format": "App",
         "on-click": "~/.config/scripts/applauncher.sh",
         "tooltip": false
     },
-
     // Power Menu
     "custom/exit": {
         "format": "",
         "on-click": "wlogout",
         "tooltip": false
     },
-
     // Keyboard State
     "keyboard-state": {
         "numlock": true,
@@ -83,37 +74,31 @@
             "unlocked": ""
         }
     },
-
     // System tray
     "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
-
     // Clock
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
-
     // CPU
     "cpu": {
         "format": "󰻠 {usage}% "
     },
-
     // Memory
     "memory": {
         "format": "󰍛 {}% "
     },
-
     // Harddisc space used
     "disk": {
         "interval": 30,
         "format": "󰨣 {percentage_used}% ",
         "path": "/"
-    }, 
-    
+    },
     // Network
     "network": {
         "format": "{ifname}",
@@ -126,7 +111,6 @@
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50
     },
-
     // Battery
     "battery": {
         "states": {
@@ -138,13 +122,18 @@
         "format-charging": "󰂄  {capacity}%",
         "format-plugged": "  {capacity}%",
         "format-alt": "{icon}  {time}",
-        "format-icons": ["󰁺", "󰁼", "󰁾", "󰂂", "󰁹"]
+        "format-icons": [
+            "󰁺",
+            "󰁼",
+            "󰁾",
+            "󰂂",
+            "󰁹"
+        ]
     },
-
     // Pulseaudio
     "pulseaudio": {
-        "scroll-step": 1, 
-		"format": "{icon} {volume}% {format_source}",
+        "scroll-step": 1,
+        "format": "{icon} {volume}% {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": "󰂲 {icon} {format_source}",
         "format-muted": "󰝟 {volume}% {format_source}",
@@ -157,20 +146,22 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", " ", " "]
+            "default": [
+                "",
+                " ",
+                " "
+            ]
         },
         "on-click": "pavucontrol"
     },
-
     // Bluetooth
     "bluetooth": {
         "format-disabled": "",
         "format-off": "",
         "interval": 30,
-        // "on-click": "blueman-manager"
+        //"on-click": "blueman-manager"
         "on-click": "blueberry"
     },
-
     // Other
     "user": {
         "format": "{user}",
