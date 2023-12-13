@@ -1,0 +1,25 @@
+
+window#waybar {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#window {
+  background: @color3;
+  padding: 0 10px 0px 10px;
+  border: 5px solid @color8;
+  border-radius: 10px;
+}
+
+window#waybar.empty{
+  background: rgba(0, 0, 0, 0);
+  padding: 0px;
+  border: 0;
+  border: 0px;
+}
+
+window#waybar.empty #window{
+  background: rgba(0, 0, 0, 0);
+  padding: 0px;
+  border: 0;
+  border: 0px;
+}

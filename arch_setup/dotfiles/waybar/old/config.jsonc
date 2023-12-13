@@ -1,0 +1,27 @@
+{
+    // General Settings
+    "layer": "top",
+        "height": 16,
+        "margin-top": 14,
+        "margin-bottom": 0,
+        "margin-left": 0,
+        "margin-right": 0,    
+        "spacing": 0,
+
+        // Load Modules
+        "include": ["~/.config/waybar/modules.jsonc"],
+
+        // Modules Left
+        "modules-left": ["custom/appmenu","hyprland/workspaces","wlr/taskbar","hyprland/window"],
+
+        // Modules Center
+        "modules-center": ["clock"],
+
+        // Modules Right    
+        "modules-right": [ "custom/updates", "pulseaudio", "bluetooth", "battery", "group/hardware", "network", "custom/exit"],
+
+        // Group Hardware
+        "group/hardware": { "orientation": "horizontal", "modules": [ "disk", "cpu", "memory" ]
+        }
+
+}

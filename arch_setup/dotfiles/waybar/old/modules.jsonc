@@ -4,29 +4,14 @@
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
-        "format": "{icon}",
-        "format-icons": {
-            "urgent": "",
-            "active": "",
-            "default": ""
-        },
         "persistent_workspaces": {
             "*": 5
         }
     },
     // Taskbar
     "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 18,
-        "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
-        "ignore-list": [
-            "Alacritty"
-        ],
-        "app_ids-mapping": {
-            "firefoxdeveloperedition": "firefox-developer-edition"
-        },
         "rewrite": {
             "Firefox Web Browser": "Firefox",
             "Foot Server": "Terminal"
@@ -40,21 +25,9 @@
         "on-click": "alacritty -e yay",
         "tooltip": false
     },
-    // Brave Launcher
-    "custom/firefox": {
-        "format": "",
-        "on-click": "firefox",
-        "tooltip": false
-    },
-    // Rofi Calculator
-    "custom/calculator": {
-        "format": "",
-        "on-click": "~/.config/scripts/calculator.sh",
-        "tooltip": false
-    },
     // Rofi Application Launcher
     "custom/appmenu": {
-        "format": "App",
+        "format": "󰀻",
         "on-click": "~/.config/scripts/applauncher.sh",
         "tooltip": false
     },
@@ -64,16 +37,6 @@
         "on-click": "wlogout",
         "tooltip": false
     },
-    // Keyboard State
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
     // System tray
     "tray": {
         // "icon-size": 21,
@@ -81,9 +44,10 @@
     },
     // Clock
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": " {:%a, %d %b,  %I:%M %p}",
+        "format-alt": " {:%y/%d/%m,  %I:%M %p}",
+        "tooltip": "true",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     // CPU
     "cpu": {
@@ -91,13 +55,13 @@
     },
     // Memory
     "memory": {
-        "format": "󰍛 {}% "
+        "format": "{}% "
     },
     // Harddisc space used
     "disk": {
         "interval": 30,
         "format": "󰨣 {percentage_used}% ",
-        "path": "/"
+        "path": "/home/belkarto/"
     },
     // Network
     "network": {
@@ -114,7 +78,6 @@
     // Battery
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
@@ -166,6 +129,6 @@
     "user": {
         "format": "{user}",
         "interval": 60,
-        "icon": false,
+        "icon": false
     }
 }

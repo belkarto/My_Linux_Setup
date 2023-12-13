@@ -1,0 +1,179 @@
+#custom-updates {
+    font-size: 15px;
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 10px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border-left: 5px solid @color8;
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    border-radius: 10px 0px 0px 10px;
+}
+
+/* =================================================== */
+
+#pulseaudio {
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    border-right: 3px solid #000;
+    border-left: 3px solid #000;
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 8px 0px 5px;
+    margin: 0px 0px 0px 0px;
+}
+
+#pulseaudio.muted {
+    background-color: @color3;
+    background-color: #FF5700;
+    color: @color0;
+}
+
+/* =================================================== */
+
+#network{
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    border-right: 3px solid #000000;
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 10px 0px 2px;
+    margin: 0px 0px 0px 0px;
+}
+
+#network.disconnected {
+    background-color: #FF0000;
+}
+
+/* =================================================== */
+
+#cpu{
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    border-right: 1px solid #000000; 
+    border-right: 1px solid #000000; 
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 4px 0px 2px;
+    margin: 0px 0px 0px 0px;
+}
+ #cpu.critical {
+    background-color: #FF0000;
+
+ }
+
+/* =================================================== */
+
+#memory{
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    border-right: 1px solid #000000; 
+    border-left:  1px solid #000000;
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 4px 0px 5px;
+    margin: 0px 0px 0px 0px;
+}
+
+/* =================================================== */
+
+#disk{
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    border-left:  1px solid #000000;
+    border-right: 3px solid #000;
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 5px 0px 2px;
+    margin: 0px 0px 0px 0px;
+}
+
+/* =================================================== */
+
+#temperature {
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    background-color: @color5;
+    color: #ffffff;
+    padding: 0px 2px 0px 4px;
+    margin: 0px 0px 0px 0px;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+/* =================================================== */
+
+#backlight {
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    border-right: 3px solid #000000;
+    border-left: 2px solid  #cccccc;
+    background-color: @color5;
+    color: #ffffff;
+    padding: 0px 5px 0px 2px;
+    margin: 0px 0px 0px 0px;
+}
+
+
+/* =================================================== */
+
+#battery {
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    border-right: 3px solid #000;
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 15px 0px 5px;
+}
+
+#battery.charging{
+    color: #ffffff;
+    background-color: #1ED760;
+    padding: 0px 5px 0px 5px;
+}
+#battery.plugged{
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 15px 0px 5px;
+}
+@keyframes blink {
+    to {
+        background-color: #FF9900;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #F00;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* =================================================== */
+
+#clock {
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+/* =================================================== */
+
+#custom-exit {
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    font-size: 20px;
+    border-left: 3px solid #000;
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 10px 0px 5px;
+}

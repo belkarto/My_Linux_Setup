@@ -1,0 +1,118 @@
+#custom-appmenu {
+    font-size: 20px;
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 5px 0px 5px;
+    margin: 0px 0px 0px 0px;
+    border-top: 3px solid @color2;
+    border-bottom: 3px solid @color2;
+}
+
+/* =================================================== */
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* =================================================== */
+
+#workspaces {
+    background: @color3;
+    margin-left: 0px;
+    font-size: 20px;
+    padding: 0px 0px 0px 0px;
+    border-left: 2px solid #000000;
+    border-top: 3px solid @color2;
+    border-bottom: 3px solid @color2;
+}
+
+#workspaces button {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 0px 2px 0px 2px;
+}
+
+#workspaces button.active {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -2px ;
+    margin-left: 0px;
+    padding: 0px 8px 0px 8px;
+}
+
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0px 5px 0px 5px;
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #FF0000;
+    padding: 0px 5px 0px 5px;
+    box-shadow: inset 0 -3px #FFaa00;
+}
+
+/* =================================================== */
+
+#taskbar {
+    background-color: @color5;
+    color: @color0;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
+    border-top: 3px solid @color2;
+    border-bottom: 3px solid @color2;
+}
+
+#taskbar button {
+    background-color: transparent;
+    padding: 0px 2px 0px 2px;
+}
+
+#taskbar button.active {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -2px #FFFFFF;
+    margin-left: 0px;
+    padding: 0px 8px 0px 8px;
+}
+
+#taskbar button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0px 5px 0px 5px;
+}
+
+
+/* =================================================== */
+
+#custom-spotify {
+    font-size: 20px;
+    background-color: @color8;
+    color: #1ED760;
+    padding: 0px 10px 0px 5px;
+    border-top: 3px solid @color2;
+    border-bottom: 3px solid @color2;
+}
+
+/* =================================================== */
+
+#custom-discord {
+    font-size: 20px;
+    background-color: @color8;
+    color: #7289da;
+    padding: 0px 10px 0px 5px;
+    border-right: 5px solid @color2;
+    border-bottom: 3px solid @color2;
+    border-top: 3px solid @color2;
+    border-radius: 0px 10px 10px 0px;
+}

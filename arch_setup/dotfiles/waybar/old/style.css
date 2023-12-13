@@ -1,0 +1,90 @@
+@import 'colors-waybar.css';
+* {
+    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 13pt;
+    color: @color15;
+}
+
+/* Set background color of main waybar window */
+window#waybar {
+  background: transparent;
+}
+
+/* Set background color of tooltips */
+tooltip {
+  background: #ffffff;
+}
+
+/* Set workspace text color and padding */
+#workspaces button {
+  padding: 2px;
+}
+
+/* Sets active workspace to have a solid line on the bottom */
+#workspaces button.active {
+  border-bottom: 3px solid @color1;
+  border-radius: 0;
+  margin-top: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+  background: @color2;
+}
+
+/* Sets background, padding, margins, and borders for (all) modules */
+#workspaces,
+#clock,
+#window,
+#temperature,
+#cpu,
+#disk,
+#memory,
+#tray,
+#network,
+#pulseaudio,
+#bluetooth,
+#battery {
+  background: @color3;
+  padding: 0 10px;
+  border: 0;
+}
+
+
+#workspaces {
+  margin-right: -8px;
+}
+
+/* Hide window module when not focused on window or empty workspace */
+window#waybar.empty #window {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  background-color: transparent;
+}
+
+/* Set up rounding to make these modules look like separate pills */
+#tray {
+  border-radius: 8px;
+  margin-right: 4px;
+}
+
+#window {
+  border-radius: 8px;
+}
+
+/* Rounding only on left of module */
+#pulseaudio {
+  border-radius: 8px 0 0 8px;
+}
+
+/* Rounding only on right of module(s) */
+#network {
+  border-radius: 0 8px 8px 0;
+}
+
+#clock {
+  border-radius: 8px 8px 8px 8px;
+}
+
