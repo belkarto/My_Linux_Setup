@@ -17,6 +17,7 @@
     "modules-right": [
         "custom/updates",
         "pulseaudio",
+        "bluetooth",
         "network",
         "group/hardware",
         "clock",

@@ -111,6 +111,16 @@
             "Foot Server": "Terminal"
         }
     },
+    "bluetooth": {
+        "format": "",
+        "format-connected": "",
+        "format-disabled": "󰂲",
+        "format-off": "OFF 󰂲",
+        "format-on": "ON 󰂲",
+        "interval": 30,
+        // "on-click": "blueman-manager"
+        "on-click": "blueberry"
+    },
     // Updates Count
     "custom/updates": {
         "format": "{} ",
