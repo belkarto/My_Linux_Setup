@@ -12,12 +12,21 @@
         "custom/discord"
     ],
 
-    "modules-center": ["hyprland/window"],
+    "modules-center": [
+        "hyprland/window",
+        "custom/spotify-metadata",
+        "custom/spotify-monitor",
+        "custom/spotify-prev",
+        "custom/spotify-play-pause",
+        "custom/spotify-next",
+        "custom/spotify-quit"
+    ],
 
     "modules-right": [
         "custom/updates",
         "pulseaudio",
         "bluetooth",
+        "tray",
         "network",
         "group/hardware",
         "clock",
@@ -35,5 +44,11 @@
             "backlight",
             "battery"
         ]
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 25,
+        "show-passive-items": true
     }
 }

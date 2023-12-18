@@ -1,27 +1,253 @@
+[{
+    "height": 40,
+    "margin": "10px 7px 0p 5px",
+    "name": "top",
+    "layer": "bottom",
+    "position": "top",
+    "modules-right": ["sway/mode", "clock", "clock#utc"],
+    "modules-left": ["sway/workspaces"],
+    "sway/workspaces": {
+        "format": "{icon} {name}",
+        "format-icons": {
+            "chat":     "",
+            "web":      "爵",
+            "terminal": "",
+            "ebooks":   "",
+            "music":    "",
+            "apps":     "",
+            "vm":       "",
+            "stats":    "",
+            "sound":    "蓼",
+            "default":  ""
+        },
+        "disable-scroll": true
+    },
+    "clock": {
+        "format": "{:%a %d %b %H:%M}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "clock#utc": {
+        "format": "{:%H:%M UTC}",
+        "timezone": "Etc/UTC"
+    },
+    "sway/mode": {
+        "format": ""
+    }
+},
 {
-    // General Settings
+    "height": 15,
+    "name": "bottom",
     "layer": "top",
-        "height": 16,
-        "margin-top": 14,
-        "margin-bottom": 0,
-        "margin-left": 0,
-        "margin-right": 0,    
-        "spacing": 0,
-
-        // Load Modules
-        "include": ["~/.config/waybar/modules.jsonc"],
-
-        // Modules Left
-        "modules-left": ["custom/appmenu","hyprland/workspaces","wlr/taskbar","hyprland/window"],
-
-        // Modules Center
-        "modules-center": ["clock"],
-
-        // Modules Right    
-        "modules-right": [ "custom/updates", "pulseaudio", "bluetooth", "battery", "group/hardware", "network", "custom/exit"],
-
-        // Group Hardware
-        "group/hardware": { "orientation": "horizontal", "modules": [ "disk", "cpu", "memory" ]
+    "margin": "0px 0px 0px 0px",
+    "position": "left",
+    "modules-right": ["network", "pulseaudio", "backlight", "battery", "custom/grimshot", "custom/wfrecord", "custom/vm", "custom/containers", "memory", "cpu", "disk", "temperature", "tray",  "idle_inhibitor"],
+    "modules-left": ["custom/spotify-monitor", "custom/spotify-metadata", "custom/spotify-next", "custom/spotify-play-pause", "custom/spotify-prev", "custom/spotify-quit"],
+    "clock": {
+        "rotate": 90,
+        "format": "{:%a %d %b %H:%M}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "clock#utc": {
+        "rotate": 90,
+        "format": "{:%H:%M UTC}",
+        "timezone": "Etc/UTC"
+    },
+    "battery": {
+        "format": "{icon}",
+        "format-alt": "{time} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": ["", "", "", ""],
+        "format-charging": "",
+        "interval": 30,
+        "on-click": "gnome-control-center power",
+        "states": {
+            "warning": 45,
+            "critical": 20
         }
-
-}
+    },
+    "network": {
+        "format": "{icon}",
+        "format-alt": "{icon}",
+        "format-icons": {
+            "wifi": ["﬉"],
+            "ethernet": [""],
+            "disconnected": [""]
+        },   
+        "format-alt-click": "click-right",
+        "format-wifi": "﬉",
+        "format-ethernet": "",
+        "format-disconnected": "", 
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid} {signalStrength}% ﬉",
+        "tooltip-format-ethernet": "{ifname} {ipaddr} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "gnome-control-center network",
+        "tooltip": true
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["", "", ""],
+        "on-scroll-up": "exec brightnessctl set 5%+",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "tooltip-format": "{percent}",
+        "states": {
+            "low": 0,
+            "mid": 50,
+            "high": 75
+        }
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-alt-click": "click-right",
+        "format-bluetooth": "",
+        "format-muted": "婢",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", ""]
+        },
+        "tooltip-format": "{volume}",
+        "scroll-step": 10,
+        "on-click": "~/.config/waybar/custom/pulseaudio.sh",
+        "states": {
+            "low": 0,
+            "mid": 50,
+            "high": 75
+        }
+    },
+    "custom/grimshot": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "grimshot --notify save output - | swappy -f -",
+        "on-click-middle": "grimshot --notify save area - | swappy -f -",
+        "on-click-right": "grimshot --notify save window - | swappy -f -"
+    }, 
+    "custom/wfrecord": {
+        "format": "",
+        "tooltip": false,
+        "interval": "once",
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/wfrecord-monitor.sh",
+        "on-click": "~/.config/waybar/custom/wfrecord-record.sh",
+        "on-click-right": "~/.config/waybar/custom/wfrecord-stop.sh",
+        "signal": 8
+    },
+    "custom/vm": {
+        "format": "   ",
+        "interval": 10,
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/kvm-monitor.sh",
+        "on-click": "~/.config/waybar/custom/kvm.sh"
+    },
+    "custom/containers": {
+        "format": "   ",
+        "interval": 10,
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/containers-monitor.sh"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "",
+        "format-alt-click": "click-right",
+        "on-click": "~/.config/waybar/custom/stats.sh",
+        "states": {
+            "low": 0,
+            "mid": 25,
+            "high": 50
+        }
+    },
+    "memory": {
+        "interval": 30,
+        "format": "",
+        "tooltip-format": "{used:0.1f}G used\n{avail:0.1f}G available\n{total:0.1f}G total",
+        "format-alt-click": "click-right",
+        "on-click": "~/.config/waybar/custom/stats.sh",
+        "states": {
+            "low": 0,
+            "mid": 25,
+            "high": 50
+        }
+    },
+    "disk": {
+        "interval": 30,
+        "format": "",
+        "format-alt-click": "click-right",
+        "tooltip-format": "{used} used\n{free} free\n{total} total",
+        "on-click": "~/.config/waybar/custom/disk_stats.sh",
+        "path": "/",
+        "states": {
+            "low": 0,
+            "mid": 25,
+            "high": 50
+        }
+    },
+    "temperature": {
+        "format": "",
+        "critical-threshold": 80
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 25,
+        "show-passive-items": true
+    },
+    "custom/spotify-monitor": {
+        "interval": 30,
+        "exec": "~/.config/waybar/custom/spotify/monitor.sh",
+        "signal": 4
+    },
+    "custom/spotify-metadata": {
+        "format": " {}",
+        "max-length": 30,
+        "min-length": 30,
+        "interval": "once",
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/spotify/metadata.sh",
+        "on-click": "sway workspace music",
+        "rotate": 90,
+        "signal": 5
+    },
+    "custom/spotify-play-pause": {
+        "format": "{}",
+        "interval": "once",
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/spotify/play-pause.sh",
+        "on-click": "~/.config/waybar/custom/spotify/controls.sh",
+        "signal": 5
+    },
+    "custom/spotify-next": {
+        "format": "怜",
+        "return-type": "json",
+        "interval": "once",
+        "exec": "~/.config/waybar/custom/spotify/metadata.sh",
+        "on-click": "~/.config/waybar/custom/spotify/controls.sh next",
+        "rotate": 90,
+        "signal": 5
+    },
+    "custom/spotify-prev": {
+        "format": "玲",
+        "interval": "once",
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/spotify/metadata.sh",
+        "on-click": "~/.config/waybar/custom/spotify/controls.sh prev",
+        "rotate": 90,
+        "signal": 5
+    },
+    "custom/spotify-quit": {
+        "format": "",
+        "interval": "once",
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/spotify/metadata.sh",
+        "on-click": "~/.config/waybar/custom/spotify/quit.sh ",
+        "rotate": 90,
+        "signal": 6
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    }
+}]

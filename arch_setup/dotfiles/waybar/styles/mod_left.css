@@ -2,7 +2,7 @@
     font-size: 20px;
     background-color: @color3;
     color: @color0;
-    padding: 0px 5px 0px 5px;
+    padding: 0px 10px 0px 5px;
     margin: 0px 0px 0px 0px;
     border-top: 3px solid @color2;
     border-bottom: 3px solid @color2;

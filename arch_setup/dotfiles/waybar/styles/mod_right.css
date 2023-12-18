@@ -59,7 +59,15 @@
 }
 
 /* =================================================== */
-
+#tray {
+    border-bottom: 3px solid @color8;
+    border-top: 3px solid @color8;
+    border-right: 3px solid #000000;
+    background-color: @color3;
+    color: @color0;
+    padding: 0px 8px 0px 5px;
+    margin: 0px 0px 0px 0px;
+}
 #network{
     border-bottom: 3px solid @color8;
     border-top: 3px solid @color8;

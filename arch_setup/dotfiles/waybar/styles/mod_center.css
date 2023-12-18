@@ -23,3 +23,33 @@ window#waybar.empty #window{
   border: 0;
   border: 0px;
 }
+
+
+#custom-spotify-metadata, #custom-spotify-play-pause, #custom-spotify-prev, #custom-spotify-next, #custom-spotify-quit {
+    color:              @grey-light;
+    padding:            0px 6px 0px 6px;
+    font-size:          12px;
+}
+
+#custom-spotify-metadata {
+    margin:             0px 8px 0px 1px;
+    font-size:          16px;
+}
+#custom-spotify-metadata.playing {
+    color:              @green;
+}
+#custom-spotify-metadata.paused {
+    color:              @yellow;
+}
+#custom-spotify-prev {
+    margin:             0px 0px 0px 1px;
+}
+#custom-spotify-play-pause {
+    margin:             0px 0px 0px 1px;
+}
+#custom-spotify-next {
+    margin:             0px 0px 0px 1px;
+}
+#custom-spotify-quit {
+    margin:             0px 0px 0px 1px;
+}

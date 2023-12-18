@@ -71,7 +71,9 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-disconnected": ""
+        "format-disconnected": "",
+        "on-click-middle": "killall nm-applet",
+        "on-click": "nm-applet"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -131,7 +133,7 @@
     },
     // Rofi Application Launcher
     "custom/appmenu": {
-        "format": "󰀻",
+        "format": "󰣇",
         "on-click": "~/.config/scripts/applauncher.sh",
         "tooltip": false
     },
@@ -150,5 +152,59 @@
         "format": "󰙯",
         "on-click": "discord",
         "tooltip": false
+    },
+
+
+    // Custom spotify modules 
+    "custom/spotify-monitor": {
+        "interval": 30,
+        "exec": "~/.config/waybar/custom/spotify/monitor.sh",
+        "signal": 4
+    },
+    "custom/spotify-metadata": {
+        "format": " {}",
+        "max-length": 30,
+        "min-length": 30,
+        "interval": "once",
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/spotify/metadata.sh",
+        "on-click": "sway workspace music",
+        "rotate": 90,
+        "signal": 5
+    },
+    "custom/spotify-play-pause": {
+        "format": "{}",
+        "interval": "once",
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/spotify/play-pause.sh",
+        "on-click": "~/.config/waybar/custom/spotify/controls.sh",
+        "signal": 5
+    },
+    "custom/spotify-next": {
+        "format": "怜",
+        "return-type": "json",
+        "interval": "once",
+        "exec": "~/.config/waybar/custom/spotify/metadata.sh",
+        "on-click": "~/.config/waybar/custom/spotify/controls.sh next",
+        "rotate": 90,
+        "signal": 5
+    },
+    "custom/spotify-prev": {
+        "format": "玲",
+        "interval": "once",
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/spotify/metadata.sh",
+        "on-click": "~/.config/waybar/custom/spotify/controls.sh prev",
+        "rotate": 90,
+        "signal": 5
+    },
+    "custom/spotify-quit": {
+        "format": "",
+        "interval": "once",
+        "return-type": "json",
+        "exec": "~/.config/waybar/custom/spotify/metadata.sh",
+        "on-click": "~/.config/waybar/custom/spotify/quit.sh ",
+        "rotate": 90,
+        "signal": 6
     }
 }
