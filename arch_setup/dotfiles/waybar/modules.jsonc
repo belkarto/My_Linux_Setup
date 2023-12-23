@@ -143,17 +143,6 @@
         "on-click": "wlogout",
         "tooltip": false
     },
-    "custom/spotify": {
-        "format": "󰓇",
-        "on-click": "spotify",
-        "tooltip": false
-    },
-    "custom/discord": {
-        "format": "󰙯",
-        "on-click": "discord",
-        "tooltip": false
-    },
-
 
     // Custom spotify modules 
     "custom/spotify-monitor": {

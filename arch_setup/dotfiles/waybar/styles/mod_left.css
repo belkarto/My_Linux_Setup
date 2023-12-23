@@ -69,10 +69,10 @@ button:hover {
 #taskbar {
     background-color: @color5;
     color: @color0;
-    border-left: 2px solid #000000;
-    border-right: 2px solid #000000;
-    border-top: 3px solid @color2;
+    border-right: 5px solid @color2;
     border-bottom: 3px solid @color2;
+    border-top: 3px solid @color2;
+    border-radius: 0px 10px 10px 0px;
 }
 
 #taskbar button {
@@ -92,27 +92,4 @@ button:hover {
     padding: 0px 5px 0px 5px;
 }
 
-
 /* =================================================== */
-
-#custom-spotify {
-    font-size: 20px;
-    background-color: @color8;
-    color: #1ED760;
-    padding: 0px 10px 0px 5px;
-    border-top: 3px solid @color2;
-    border-bottom: 3px solid @color2;
-}
-
-/* =================================================== */
-
-#custom-discord {
-    font-size: 20px;
-    background-color: @color8;
-    color: #7289da;
-    padding: 0px 10px 0px 5px;
-    border-right: 5px solid @color2;
-    border-bottom: 3px solid @color2;
-    border-top: 3px solid @color2;
-    border-radius: 0px 10px 10px 0px;
-}
