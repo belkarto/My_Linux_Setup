@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Select wallpaper
-selected=$(ls -1 ~/wallpaper | grep "jpg" | rofi -dmenu -p "Wallpapers")
+selected=$(ls -1 ~/wallpaper | grep -E "jpg|png" | rofi -dmenu -p "Wallpapers")
 
 if [ "$selected" ]; then
 

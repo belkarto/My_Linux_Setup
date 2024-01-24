@@ -13,13 +13,13 @@
     ],
 
     "modules-center": [
-        "hyprland/window",
-        "custom/spotify-metadata",
-        "custom/spotify-monitor",
-        "custom/spotify-prev",
-        "custom/spotify-play-pause",
-        "custom/spotify-next",
-        "custom/spotify-quit"
+        "hyprland/window"
+        // "custom/spotify-metadata",
+        // "custom/spotify-monitor",
+        // "custom/spotify-prev",
+        // "custom/spotify-play-pause",
+        // "custom/spotify-next",
+        // "custom/spotify-quit"
     ],
 
     "modules-right": [

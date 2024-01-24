@@ -1,0 +1,10 @@
+[font.normal]
+family = "MeslolGS NF"
+style = "Regular"
+
+[window]
+opacity = 0.7
+
+[window.padding]
+x = 15
+y = 15

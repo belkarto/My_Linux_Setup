@@ -4,9 +4,9 @@
         "all-outputs": true,
         "warp-on-scroll": false,
         "format": "{name}",
-        "persistent_workspaces": {
-            "*": 10
-        }
+        // "persistent_workspaces": {
+        //     "*": 10
+        // }
     },
     "clock": {
         "format": " {:%y/%d/%m\n   %I:%M}",
